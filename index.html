@@ -68,6 +68,8 @@
                 if (event.keyCode === 87) sausage.animate({ top: "-=10" }, 'fast');           
                 if (event.keyCode === 65) sausage.animate({ left: "-=10" }, 'fast');          
                 if (event.keyCode === 68) sausage.animate({ left: "+=10" }, 'fast'); 
+
+                if ( Math.sqrt(Math.pow((dogTop - sausageTop),2) + Math.pow((dogLeft - sausageLeft),2)) <= 127) sausage.animate({ 'opacity': '0' }); 
             });          
        </script>      
     </body>
