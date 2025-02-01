@@ -21,27 +21,53 @@
             top: 300px;     
             left: 500px;    
             width: 255px;           
-            height: 255px;       git 
-        }        
+            height: 255px;       
+        }
+        #sausage {      
+            position: absolute;      
+            background-image: url('https://grizly.club/uploads/posts/2023-01/1674667618_grizly-club-p-sosiska-klipart-5.png');        
+            background-size: contain;     
+            background-repeat: no-repeat;        
+            top: 10px;         
+            left: 10px;            
+            width: 150px;       
+            height: 130px;       
+       }             
 
     </style>
     <body>
         <main>         
             <div id = "dog"></div>
+            <div id = "sausage"></div>
         </main>       
        <script>
             const dog = $("#dog");
-            $(document).keyup(function(event){      
+            const sausage = $("#sausage")
+            $(document).keyup(function(event){
                 const dogTop = dog.css('top').slice(0,-2);        
-                const dogLeft = dog.css('left').slice(0,-2);                    
+                const dogLeft = dog.css('left').slice(0,-2);
+                const sausageTop = sausage.css('top').slice(0,-2);         
+                const sausageLeft = sausage.css('left').slice(0,-2);  
+
                 if (dogTop <= 0) dog.css('top', '50px');     
                 if (dogTop >= 600) dog.css('top', '550px');            
                 if (dogLeft <= 0) dog.css('left', '150px');          
                 if (dogLeft >= 1000) dog.css('left', '950px');
+                
+                if (sausageTop <= 0) sausage.css('top', '50px' );     
+                if (sausageTop >= 600) sausage.css('top', '550px' );       
+                if (sausageLeft <= 0) sausage.css('left', '150px' );       
+                if (sausageLeft >= 1000) sausage.css('left', '950px' )
+
                 if (event.keyCode === 40) dog.animate({ top: "+=10" }, 'fast');    
                 if (event.keyCode === 38) dog.animate({ top: "-=10" }, 'fast');     
                 if (event.keyCode === 37) dog.animate({ left: "-=10" }, 'fast');         
-                if (event.keyCode === 39) dog.animate({ left: "+=10" }, 'fast');         
+                if (event.keyCode === 39) dog.animate({ left: "+=10" }, 'fast');
+                
+                if (event.keyCode === 83) sausage.animate({ top: "+=10" }, 'fast');            
+                if (event.keyCode === 87) sausage.animate({ top: "-=10" }, 'fast');           
+                if (event.keyCode === 65) sausage.animate({ left: "-=10" }, 'fast');          
+                if (event.keyCode === 68) sausage.animate({ left: "+=10" }, 'fast'); 
             });          
        </script>      
     </body>
