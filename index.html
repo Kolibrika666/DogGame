@@ -13,7 +13,7 @@
             background-size: cover;        
             width: 1255px;           
             height: 855px;            
-        } 
+        }
         #dog {               position: absolute;    
             background-image: url('https://flomaster.top/uploads/posts/2023-10/1697512380_flomaster-top-p-sobaka-risunok-na-belom-fone-pinterest-1.png');       
             background-size: contain;   
@@ -21,7 +21,7 @@
             top: 300px;     
             left: 500px;    
             width: 255px;           
-            height: 255px;       
+            height: 255px;       git 
         }        
 
     </style>
@@ -30,7 +30,19 @@
             <div id = "dog"></div>
         </main>       
        <script>
-
+            const dog = $("#dog");
+            $(document).keyup(function(event){      
+                const dogTop = dog.css('top').slice(0,-2);        
+                const dogLeft = dog.css('left').slice(0,-2);                    
+                if (dogTop <= 0) dog.css('top', '50px');     
+                if (dogTop >= 600) dog.css('top', '550px');            
+                if (dogLeft <= 0) dog.css('left', '150px');          
+                if (dogLeft >= 1000) dog.css('left', '950px');
+                if (event.keyCode === 40) dog.animate({ top: "+=10" }, 'fast');    
+                if (event.keyCode === 38) dog.animate({ top: "-=10" }, 'fast');     
+                if (event.keyCode === 37) dog.animate({ left: "-=10" }, 'fast');         
+                if (event.keyCode === 39) dog.animate({ left: "+=10" }, 'fast');         
+            });          
        </script>      
     </body>
 </html>
